@@ -17,11 +17,12 @@ BuildRequires:	cairomm-devel >= 1.6.3
 BuildRequires:	glibmm-devel >= 2.16.0
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool
-BuildRequires:	pango-devel >= 1:1.22.0
+BuildRequires:	pango-devel >= 1:1.24.0
+BuildRequires:	perl-base >= 1:5.6.0
 BuildRequires:	pkgconfig
 Requires:	cairomm >= 1.6.3
 Requires:	glibmm >= 2.16.0
-Requires:	pango >= 1:1.22.0
+Requires:	pango >= 1:1.24.0
 Provides:	gtkmm-pango
 Obsoletes:	gtkmm-pango
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -39,7 +40,7 @@ Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	cairomm-devel >= 1.6.3
 Requires:	glibmm-devel >= 2.16.0
-Requires:	pango-devel >= 1:1.22.0
+Requires:	pango-devel >= 1:1.24.0
 Provides:	gtkmm-pango-devel
 Obsoletes:	gtkmm-pango-devel
 
