@@ -4,12 +4,12 @@
 Summary:	A C++ interface for pango library
 Summary(pl.UTF-8):	Interfejs C++ dla biblioteki pango
 Name:		pangomm
-Version:	2.24.0
-Release:	2
+Version:	2.26.0
+Release:	1
 License:	LGPL v2+
 Group:		X11/Libraries
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/pangomm/2.24/%{name}-%{version}.tar.bz2
-# Source0-md5:	fa0f44c37499433455857becad4bbcda
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/pangomm/2.26/%{name}-%{version}.tar.bz2
+# Source0-md5:	37f54dc8e6cb73ed923b22f313352156
 URL:		http://www.gtkmm.org/
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.9
@@ -17,6 +17,7 @@ BuildRequires:	cairomm-devel >= 1.6.3
 BuildRequires:	glibmm-devel >= 2.16.0
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool
+BuildRequires:	mm-common >= 0.7.1
 BuildRequires:	pango-devel >= 1:1.24.0
 BuildRequires:	perl-base >= 1:5.6.0
 BuildRequires:	pkgconfig
@@ -81,7 +82,7 @@ Dokumentacja API biblioteki pangomm.
 
 %build
 %{__libtoolize}
-%{__aclocal} -I scripts
+%{__aclocal} -I build
 %{__autoconf}
 %{__autoheader}
 %{__automake}
