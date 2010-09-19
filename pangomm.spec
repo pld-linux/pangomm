@@ -14,7 +14,7 @@ URL:		http://www.gtkmm.org/
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.9
 BuildRequires:	cairomm-devel >= 1.6.3
-BuildRequires:	glibmm-devel >= 2.16.0
+BuildRequires:	glibmm-devel >= 2.22.0
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool
 BuildRequires:	mm-common >= 0.7.1
