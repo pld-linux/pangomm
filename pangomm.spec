@@ -4,12 +4,12 @@
 Summary:	A C++ interface for pango library
 Summary(pl.UTF-8):	Interfejs C++ dla biblioteki pango
 Name:		pangomm
-Version:	2.26.2
+Version:	2.26.3
 Release:	1
 License:	LGPL v2+
 Group:		X11/Libraries
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/pangomm/2.26/%{name}-%{version}.tar.bz2
-# Source0-md5:	b363b09faf884db8bf8d1458d719ff00
+# Source0-md5:	1f2712d53918cfb4745c291a67b86156
 URL:		http://www.gtkmm.org/
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.9
