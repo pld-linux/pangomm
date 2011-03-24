@@ -4,15 +4,15 @@
 Summary:	A C++ interface for pango library
 Summary(pl.UTF-8):	Interfejs C++ dla biblioteki pango
 Name:		pangomm
-Version:	2.26.3
+Version:	2.28.0
 Release:	1
 License:	LGPL v2+
 Group:		X11/Libraries
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/pangomm/2.26/%{name}-%{version}.tar.bz2
-# Source0-md5:	1f2712d53918cfb4745c291a67b86156
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/pangomm/2.28/%{name}-%{version}.tar.bz2
+# Source0-md5:	524c3c7da1c0b728970592880af36def
 URL:		http://www.gtkmm.org/
 BuildRequires:	autoconf >= 2.59
-BuildRequires:	automake >= 1:1.9
+BuildRequires:	automake >= 1:1.11
 BuildRequires:	cairomm-devel >= 1.6.3
 BuildRequires:	glibmm-devel >= 2.22.0
 BuildRequires:	libstdc++-devel
@@ -87,6 +87,7 @@ Dokumentacja API biblioteki pangomm.
 %{__autoheader}
 %{__automake}
 %configure \
+	--disable-silent-rules \
 	--enable-static
 %{__make}
 
@@ -95,6 +96,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/*.la
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -112,7 +115,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libpangomm-%{apiver}.so
 %{_includedir}/pangomm-%{apiver}
-%{_libdir}/libpangomm-%{apiver}.la
 %{_libdir}/pangomm-%{apiver}
 %{_pkgconfigdir}/pangomm-%{apiver}.pc
 
