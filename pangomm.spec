@@ -22,7 +22,7 @@ BuildRequires:	pango-devel >= 1:1.24.0
 BuildRequires:	perl-base >= 1:5.6.0
 BuildRequires:	pkgconfig
 Requires:	cairomm >= 1.6.3
-Requires:	glibmm >= 2.16.0
+Requires:	glibmm >= 2.22.0
 Requires:	pango >= 1:1.24.0
 Provides:	gtkmm-pango
 Obsoletes:	gtkmm-pango
@@ -40,7 +40,7 @@ Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki pangomm
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	cairomm-devel >= 1.6.3
-Requires:	glibmm-devel >= 2.16.0
+Requires:	glibmm-devel >= 2.22.0
 Requires:	pango-devel >= 1:1.24.0
 Provides:	gtkmm-pango-devel
 Obsoletes:	gtkmm-pango-devel
