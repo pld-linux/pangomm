@@ -16,7 +16,7 @@ BuildRequires:	automake >= 1:1.11
 BuildRequires:	cairomm-devel >= 1.6.3
 BuildRequires:	glibmm-devel >= 2.22.0
 BuildRequires:	libstdc++-devel
-BuildRequires:	libtool >= 2:1.5
+BuildRequires:	libtool >= 2:2.0
 BuildRequires:	mm-common >= 0.9.5
 BuildRequires:	pango-devel >= 1:1.24.0
 BuildRequires:	perl-base >= 1:5.6.0
