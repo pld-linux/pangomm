@@ -1,11 +1,11 @@
 #
 %define		apiver	1.4
-#
+
 Summary:	A C++ interface for pango library
 Summary(pl.UTF-8):	Interfejs C++ dla biblioteki pango
 Name:		pangomm
 Version:	2.34.0
-Release:	1
+Release:	2
 License:	LGPL v2+
 Group:		X11/Libraries
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/pangomm/2.34/%{name}-%{version}.tar.xz
@@ -72,6 +72,9 @@ Summary:	pangomm library API documentation
 Summary(pl.UTF-8):	Dokumentacja API biblioteki pangomm
 Group:		Documentation
 Requires:	devhelp
+%if "%{_rpmversion}" >= "5"
+BuildArch:	noarch
+%endif
 
 %description apidocs
 pangomm library API documentation.
@@ -95,7 +98,6 @@ Dokumentacja API biblioteki pangomm.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
