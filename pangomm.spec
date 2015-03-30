@@ -4,12 +4,12 @@
 Summary:	A C++ interface for pango library
 Summary(pl.UTF-8):	Interfejs C++ dla biblioteki pango
 Name:		pangomm
-Version:	2.34.0
-Release:	3
+Version:	2.36.0
+Release:	1
 License:	LGPL v2+
 Group:		X11/Libraries
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/pangomm/2.34/%{name}-%{version}.tar.xz
-# Source0-md5:	2c702caede167323c9ed9eed2b933098
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/pangomm/2.36/%{name}-%{version}.tar.xz
+# Source0-md5:	62910723211d86ab825b666b479871c9
 URL:		http://www.gtkmm.org/
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.11
@@ -18,14 +18,14 @@ BuildRequires:	glibmm-devel >= 2.36.0
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool >= 2:2.0
 BuildRequires:	mm-common >= 0.9.5
-BuildRequires:	pango-devel >= 1:1.24.0
+BuildRequires:	pango-devel >= 1:1.36.0
 BuildRequires:	perl-base >= 1:5.6.0
 BuildRequires:	pkgconfig
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 Requires:	cairomm >= 1.6.3
 Requires:	glibmm >= 2.36.0
-Requires:	pango >= 1:1.24.0
+Requires:	pango >= 1:1.36.0
 Provides:	gtkmm-pango
 Obsoletes:	gtkmm-pango
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -43,7 +43,7 @@ Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	cairomm-devel >= 1.6.3
 Requires:	glibmm-devel >= 2.36.0
-Requires:	pango-devel >= 1:1.24.0
+Requires:	pango-devel >= 1:1.36.0
 Provides:	gtkmm-pango-devel
 Obsoletes:	gtkmm-pango-devel
 
