@@ -1,31 +1,30 @@
-#
 %define		apiver	1.4
 
 Summary:	A C++ interface for pango library
 Summary(pl.UTF-8):	Interfejs C++ dla biblioteki pango
 Name:		pangomm
-Version:	2.36.0
+Version:	2.38.1
 Release:	1
 License:	LGPL v2+
 Group:		X11/Libraries
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/pangomm/2.36/%{name}-%{version}.tar.xz
-# Source0-md5:	62910723211d86ab825b666b479871c9
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/pangomm/2.38/%{name}-%{version}.tar.xz
+# Source0-md5:	734fc6bf8f91c94383ca10d24705ce25
 URL:		http://www.gtkmm.org/
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.11
-BuildRequires:	cairomm-devel >= 1.6.3
-BuildRequires:	glibmm-devel >= 2.36.0
-BuildRequires:	libstdc++-devel
+BuildRequires:	cairomm-devel >= 1.12.0
+BuildRequires:	glibmm-devel >= 2.46.1
+BuildRequires:	libstdc++-devel >= 6:4.6
 BuildRequires:	libtool >= 2:2.0
-BuildRequires:	mm-common >= 0.9.5
-BuildRequires:	pango-devel >= 1:1.36.0
+BuildRequires:	mm-common >= 0.9.8
+BuildRequires:	pango-devel >= 1:1.38.0
 BuildRequires:	perl-base >= 1:5.6.0
 BuildRequires:	pkgconfig
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
-Requires:	cairomm >= 1.6.3
-Requires:	glibmm >= 2.36.0
-Requires:	pango >= 1:1.36.0
+Requires:	cairomm >= 1.12.0
+Requires:	glibmm >= 2.46.1
+Requires:	pango >= 1:1.38.0
 Provides:	gtkmm-pango
 Obsoletes:	gtkmm-pango
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -41,9 +40,10 @@ Summary:	Header files for pangomm library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki pangomm
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	cairomm-devel >= 1.6.3
-Requires:	glibmm-devel >= 2.36.0
-Requires:	pango-devel >= 1:1.36.0
+Requires:	cairomm-devel >= 1.12.0
+Requires:	glibmm-devel >= 2.46.1
+Requires:	libstdc++-devel >= 6:4.6
+Requires:	pango-devel >= 1:1.38.0
 Provides:	gtkmm-pango-devel
 Obsoletes:	gtkmm-pango-devel
 
