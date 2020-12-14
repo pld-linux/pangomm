@@ -3,15 +3,16 @@
 Summary:	A C++ interface for pango library
 Summary(pl.UTF-8):	Interfejs C++ dla biblioteki pango
 Name:		pangomm
-Version:	2.42.1
+Version:	2.42.2
 Release:	1
 License:	LGPL v2+
 Group:		X11/Libraries
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/pangomm/2.42/%{name}-%{version}.tar.xz
-# Source0-md5:	339c48dd92ebd3a9911b231708f7a819
-URL:		http://www.gtkmm.org/
+Source0:	https://download.gnome.org/sources/pangomm/2.42/%{name}-%{version}.tar.xz
+# Source0-md5:	85707ce52628b6a3c3caf245095ba6d5
+URL:		https://www.gtkmm.org/
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.11
+BuildRequires:	doxygen >= 1:1.8.9
 BuildRequires:	cairomm-devel >= 1.12.0
 BuildRequires:	glibmm-devel >= 2.48.0
 BuildRequires:	libstdc++-devel >= 6:4.7
@@ -20,6 +21,7 @@ BuildRequires:	mm-common >= 0.9.10
 BuildRequires:	pango-devel >= 1:1.41.0
 BuildRequires:	perl-base >= 1:5.6.0
 BuildRequires:	pkgconfig
+BuildRequires:	rpmbuild(macros) >= 1.752
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 Requires:	cairomm >= 1.12.0
@@ -72,9 +74,7 @@ Summary:	pangomm library API documentation
 Summary(pl.UTF-8):	Dokumentacja API biblioteki pangomm
 Group:		Documentation
 Requires:	devhelp
-%if "%{_rpmversion}" >= "5"
-BuildArch:	noarch
-%endif
+%{?noarchpackage}
 
 %description apidocs
 pangomm library API documentation.
@@ -86,12 +86,14 @@ Dokumentacja API biblioteki pangomm.
 %setup -q
 
 %build
+mm-common-prepare --copy --force
 %{__libtoolize}
 %{__aclocal} -I build
 %{__autoconf}
 %{__autoheader}
 %{__automake}
 %configure \
+	--enable-maintainer-mode \
 	--disable-silent-rules \
 	--enable-static
 %{__make}
