@@ -1,32 +1,35 @@
 %define		apiver	1.4
 
+%define	cairomm_ver	1.12.0
+%define	glibmm_ver	2.48.0
+%define	pango_ver	1:1.45.1
 Summary:	A C++ interface for pango library
 Summary(pl.UTF-8):	Interfejs C++ dla biblioteki pango
 Name:		pangomm
-Version:	2.42.2
+Version:	2.46.0
 Release:	1
 License:	LGPL v2+
 Group:		X11/Libraries
-Source0:	https://download.gnome.org/sources/pangomm/2.42/%{name}-%{version}.tar.xz
-# Source0-md5:	85707ce52628b6a3c3caf245095ba6d5
+Source0:	https://download.gnome.org/sources/pangomm/2.46/%{name}-%{version}.tar.xz
+# Source0-md5:	9b32edce1e04300c1648a313dc29e9f7
 URL:		https://www.gtkmm.org/
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.11
 BuildRequires:	doxygen >= 1:1.8.9
-BuildRequires:	cairomm-devel >= 1.12.0
-BuildRequires:	glibmm-devel >= 2.48.0
+BuildRequires:	cairomm-devel >= %{cairomm_ver}
+BuildRequires:	glibmm-devel >= %{glibmm_ver}
 BuildRequires:	libstdc++-devel >= 6:4.7
 BuildRequires:	libtool >= 2:2.0
 BuildRequires:	mm-common >= 0.9.10
-BuildRequires:	pango-devel >= 1:1.41.0
+BuildRequires:	pango-devel >= %{pango_ver}
 BuildRequires:	perl-base >= 1:5.6.0
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.752
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
-Requires:	cairomm >= 1.12.0
-Requires:	glibmm >= 2.48.0
-Requires:	pango >= 1:1.41.0
+Requires:	cairomm >= %{cairomm_ver}
+Requires:	glibmm >= %{glibmm_ver}
+Requires:	pango >= %{pango_ver}
 Provides:	gtkmm-pango
 Obsoletes:	gtkmm-pango
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -42,10 +45,10 @@ Summary:	Header files for pangomm library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki pangomm
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	cairomm-devel >= 1.12.0
-Requires:	glibmm-devel >= 2.48.0
+Requires:	cairomm-devel >= %{cairomm_ver}
+Requires:	glibmm-devel >= %{glibmm_ver}
 Requires:	libstdc++-devel >= 6:4.7
-Requires:	pango-devel >= 1:1.41.0
+Requires:	pango-devel >= %{pango_ver}
 Provides:	gtkmm-pango-devel
 Obsoletes:	gtkmm-pango-devel
 
@@ -100,6 +103,7 @@ mm-common-prepare --copy --force
 
 %install
 rm -rf $RPM_BUILD_ROOT
+
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
