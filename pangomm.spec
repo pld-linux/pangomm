@@ -77,7 +77,7 @@ Summary:	pangomm library API documentation
 Summary(pl.UTF-8):	Dokumentacja API biblioteki pangomm
 Group:		Documentation
 Requires:	devhelp
-%{?noarchpackage}
+BuildArch:	noarch
 
 %description apidocs
 pangomm library API documentation.
