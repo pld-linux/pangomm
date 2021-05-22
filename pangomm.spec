@@ -6,12 +6,12 @@
 Summary:	A C++ interface for pango library
 Summary(pl.UTF-8):	Interfejs C++ dla biblioteki pango
 Name:		pangomm
-Version:	2.46.0
+Version:	2.46.1
 Release:	1
 License:	LGPL v2+
 Group:		X11/Libraries
 Source0:	https://download.gnome.org/sources/pangomm/2.46/%{name}-%{version}.tar.xz
-# Source0-md5:	9b32edce1e04300c1648a313dc29e9f7
+# Source0-md5:	62665f7ace9e282a0c563b40a15627f5
 URL:		https://www.gtkmm.org/
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.11
@@ -31,7 +31,7 @@ Requires:	cairomm >= %{cairomm_ver}
 Requires:	glibmm >= %{glibmm_ver}
 Requires:	pango >= %{pango_ver}
 Provides:	gtkmm-pango
-Obsoletes:	gtkmm-pango
+Obsoletes:	gtkmm-pango < 2.14
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -50,7 +50,7 @@ Requires:	glibmm-devel >= %{glibmm_ver}
 Requires:	libstdc++-devel >= 6:4.7
 Requires:	pango-devel >= %{pango_ver}
 Provides:	gtkmm-pango-devel
-Obsoletes:	gtkmm-pango-devel
+Obsoletes:	gtkmm-pango-devel < 2.14
 
 %description devel
 Header files for pangomm library.
@@ -64,7 +64,7 @@ Summary(pl.UTF-8):	Statyczna biblioteka pangomm
 Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 Provides:	gtkmm-pango-static
-Obsoletes:	gtkmm-pango-static
+Obsoletes:	gtkmm-pango-static < 2.14
 
 %description static
 Static pangomm library.
