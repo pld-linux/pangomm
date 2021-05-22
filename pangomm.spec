@@ -24,6 +24,7 @@ BuildRequires:	mm-common >= 0.9.10
 BuildRequires:	pango-devel >= %{pango_ver}
 BuildRequires:	perl-base >= 1:5.6.0
 BuildRequires:	pkgconfig
+BuildRequires:	rpm-build >= 4.6
 BuildRequires:	rpmbuild(macros) >= 1.752
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
