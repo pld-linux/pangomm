@@ -1,6 +1,7 @@
 #
 # Conditional build:
 %bcond_without	apidocs		# API documentation
+%bcond_without	static_libs	# static library
 
 %define		apiver	1.4
 
@@ -106,7 +107,7 @@ mm-common-prepare --copy --force
 	%{__enable_disable apidocs documentation} \
 	--enable-maintainer-mode \
 	--disable-silent-rules \
-	--enable-static
+	%{__enable_disable static_libs static}
 %{__make}
 
 %install
@@ -136,9 +137,11 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/pangomm-%{apiver}
 %{_pkgconfigdir}/pangomm-%{apiver}.pc
 
+%if %{with static_libs}
 %files static
 %defattr(644,root,root,755)
 %{_libdir}/libpangomm-%{apiver}.a
+%endif
 
 %if %{with apidocs}
 %files apidocs
