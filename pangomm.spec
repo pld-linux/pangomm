@@ -15,11 +15,13 @@ Source0:	https://download.gnome.org/sources/pangomm/2.46/%{name}-%{version}.tar.
 URL:		https://www.gtkmm.org/
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.11
-BuildRequires:	doxygen >= 1:1.8.9
 BuildRequires:	cairomm-devel >= %{cairomm_ver}
+BuildRequires:	doxygen >= 1:1.8.9
 BuildRequires:	glibmm-devel >= %{glibmm_ver}
+BuildRequires:	graphviz
 BuildRequires:	libstdc++-devel >= 6:4.7
 BuildRequires:	libtool >= 2:2.0
+BuildRequires:	libxslt-progs
 BuildRequires:	mm-common >= 0.9.10
 BuildRequires:	pango-devel >= %{pango_ver}
 BuildRequires:	perl-base >= 1:5.6.0
