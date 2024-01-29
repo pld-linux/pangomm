@@ -1,3 +1,7 @@
+#
+# Conditional build:
+%bcond_without	apidocs		# API documentation
+
 %define		apiver	1.4
 
 %define	cairomm_ver	1.12.0
@@ -16,12 +20,12 @@ URL:		https://www.gtkmm.org/
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.11
 BuildRequires:	cairomm-devel >= %{cairomm_ver}
-BuildRequires:	doxygen >= 1:1.8.9
+%{?with_apidocs:BuildRequires:	doxygen >= 1:1.8.9}
 BuildRequires:	glibmm-devel >= %{glibmm_ver}
-BuildRequires:	graphviz
+%{?with_apidocs:BuildRequires:	graphviz}
 BuildRequires:	libstdc++-devel >= 6:4.7
 BuildRequires:	libtool >= 2:2.0
-BuildRequires:	libxslt-progs
+%{?with_apidocs:BuildRequires:	libxslt-progs}
 BuildRequires:	mm-common >= 0.9.10
 BuildRequires:	pango-devel >= %{pango_ver}
 BuildRequires:	perl-base >= 1:5.6.0
@@ -99,6 +103,7 @@ mm-common-prepare --copy --force
 %{__autoheader}
 %{__automake}
 %configure \
+	%{__enable_disable apidocs documentation} \
 	--enable-maintainer-mode \
 	--disable-silent-rules \
 	--enable-static
@@ -135,7 +140,9 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %{_libdir}/libpangomm-%{apiver}.a
 
+%if %{with apidocs}
 %files apidocs
 %defattr(644,root,root,755)
 %{_docdir}/pangomm-%{apiver}
 %{_datadir}/devhelp/books/pangomm-%{apiver}
+%endif
